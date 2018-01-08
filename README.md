@@ -5,3 +5,8 @@ El proyecto tiene dos perfiles, el perfil por defecto utiliza la base de datos H
 
 Para correr el proyecto desde la consola, ir al directorio raiz y ejecutar el comando "mvn package" esto genera un jar en la carpeta target. Una vez generado el jar ingresar a la carpeta target y ejecutar "java -jar demo-0.0.1-SNAPSHOT.jar", para especificar un profile ejecutar java -Dspring.profiles.active=prod -jar demo-0.0.1-SNAPSHOT.jar
 
+Datos para prueba:
+user: wwrrss@gmail.com
+pass: 123456
+
+
