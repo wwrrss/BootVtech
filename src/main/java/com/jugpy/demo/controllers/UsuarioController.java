@@ -9,6 +9,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by william on 1/5/18.
  */
@@ -23,7 +25,7 @@ public class UsuarioController {
     private PasswordEncoder passwordEncoder;
 
     @GetMapping(value = "/")
-    public Iterable<Usuario> getPersonas(){
+    public List<Usuario> getPersonas(){
         return usuarioRepository.findAll();
     }
 
@@ -40,6 +42,6 @@ public class UsuarioController {
         }
         //Encode del password que viene como texto plano a Bcrypt
         usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
-        return new ResponseEntity(usuarioRepository.save(usuario),HttpStatus.ACCEPTED);
+        return new ResponseEntity(usuarioRepository.save(usuario),HttpStatus.CREATED);
     }
 }

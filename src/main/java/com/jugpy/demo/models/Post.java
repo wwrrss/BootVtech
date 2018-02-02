@@ -1,6 +1,9 @@
 package com.jugpy.demo.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by william on 1/8/18.
@@ -11,6 +14,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotNull
+    @NotEmpty
     private String texto;
 
     @ManyToOne(optional = false)
